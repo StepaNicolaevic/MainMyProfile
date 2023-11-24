@@ -23,7 +23,7 @@ final class ViewController: UIViewController {
         buttons.setTitle("Table", for: .normal)
         buttons.frame = CGRect(x: 130, y: 300, width: 150, height: 80)
         buttons.backgroundColor = .black
-        buttons.addTarget(self, action: #selector(buttonTableViewDidTaped), for: .touchUpInside)
+        buttons.addTarget(self, action: #selector(buttonTableViewDidTapped), for: .touchUpInside)
         return buttons
     }()
     
@@ -38,10 +38,16 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        
+    }
+    
+    func setup() {
         view.backgroundColor = .white
         view.addSubview(openCollectionButton)
         view.addSubview(openTableButton)
         view.addSubview(openScrollButton)
+        
     }
     
     @objc private func buttonCollectionViewDidTapped() {
@@ -49,7 +55,7 @@ final class ViewController: UIViewController {
         navigationController?.pushViewController(collectinVC, animated: true)
     }
     
-    @objc private func buttonTableViewDidTaped() {
+    @objc private func buttonTableViewDidTapped() {
         let tableVC = TableViewController()
         navigationController?.pushViewController(tableVC, animated: true)
     }

@@ -17,13 +17,14 @@ final class PhotoCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        setupConstraint()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup() {//razdeliti na 2 chasti
+    private func setup() {
         saleLabel.backgroundColor = .red
         saleLabel.font = UIFont(name: "Times New Roman", size: 12)
         self.contentView.addSubview(imageView)
@@ -37,6 +38,8 @@ final class PhotoCell: UICollectionViewCell {
         imageView.contentMode = .scaleToFill
         
         self.clipsToBounds = true
+    }
+        func setupConstraint() {
         
         NSLayoutConstraint.activate([
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),

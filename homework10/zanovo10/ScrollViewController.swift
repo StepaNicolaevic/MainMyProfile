@@ -67,7 +67,7 @@ final class ScrollViewController: UIViewController {
         return label
     }()
     
-    private lazy var reitingLabel: UILabel = {
+    private lazy var raitingLabel: UILabel = {
         let label = UILabel()
         label.text = "5.0"
         label.textColor = .black
@@ -115,7 +115,7 @@ final class ScrollViewController: UIViewController {
         return button
     }()
     
-    private lazy var bayButton: UIButton = {
+    private lazy var buyButton: UIButton = {
         let button = UIButton()
         button.setTitle("ЗАКАЗАТЬ НА ВЫНОС", for: .normal)
         button.layer.borderColor = UIColor.green.cgColor
@@ -143,7 +143,7 @@ final class ScrollViewController: UIViewController {
     private func setupUI() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(containerView)
-        [burgerDzoLabel, createButton, bayButton, menuButton, mapImageView, burgerImageView, timeLabel, reitingLabel, saleLabel, questionLabel, americanKichenLabel].forEach{$0.translatesAutoresizingMaskIntoConstraints = false
+        [burgerDzoLabel, createButton, buyButton, menuButton, mapImageView, burgerImageView, timeLabel, raitingLabel, saleLabel, questionLabel, americanKichenLabel].forEach{$0.translatesAutoresizingMaskIntoConstraints = false
             containerView.addSubview($0)
         }
     }
@@ -151,6 +151,7 @@ final class ScrollViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         setupConstraints()
     }
+    
     private func setupConstraints() {
         
         NSLayoutConstraint.activate([
@@ -165,8 +166,8 @@ final class ScrollViewController: UIViewController {
             americanKichenLabel.topAnchor.constraint(equalTo: burgerDzoLabel.bottomAnchor, constant: 10),
             saleLabel.topAnchor.constraint(equalTo: americanKichenLabel.bottomAnchor, constant: 15),
             saleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            reitingLabel.topAnchor.constraint(equalTo: americanKichenLabel.bottomAnchor, constant: 15),
-            reitingLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15)
+            raitingLabel.topAnchor.constraint(equalTo: americanKichenLabel.bottomAnchor, constant: 15),
+            raitingLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15)
         ])
         
         NSLayoutConstraint.activate([
@@ -184,9 +185,9 @@ final class ScrollViewController: UIViewController {
             createButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 15),
             createButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             createButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
-            bayButton.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 15),
-            bayButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            bayButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
+            buyButton.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 15),
+            buyButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            buyButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
         ])
     }
 }

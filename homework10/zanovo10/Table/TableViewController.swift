@@ -16,6 +16,10 @@ final class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupTableViewController()
+    }
+    
+    func setupTableViewController() {
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine

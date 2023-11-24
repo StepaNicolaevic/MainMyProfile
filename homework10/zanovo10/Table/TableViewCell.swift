@@ -44,7 +44,7 @@ final class TableViewCell: UITableViewCell {
     }
         
     func configure(seting: Setting) {
-        avatar.image = seting.imageMain
+        let avatar = seting.imageMain
         nameLabel.text = seting.name
     }
 }

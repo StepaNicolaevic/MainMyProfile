@@ -34,12 +34,11 @@ final class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        view.addSubview(searchBar)
-        view.backgroundColor = .white
     }
     
     private func setupCollectionView() {
-        
+        view.addSubview(searchBar)
+        view.backgroundColor = .white
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
