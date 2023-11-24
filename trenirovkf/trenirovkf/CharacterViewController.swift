@@ -98,13 +98,10 @@ final class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupConstrint()
+        setupConstraint()
         view.backgroundColor = UIColor(red: 0.18, green: 0.17, blue: 0.15, alpha: 1.00)
-        
     }
-    func setupUI() {
-        
-        
+    private func setupUI() {
         view.addSubview(greenIndicateView)
         switch dataSourse?.status {
         case.alive:
@@ -158,7 +155,7 @@ final class CharacterViewController: UIViewController {
         headingSpeciecAndGennderLabel.translatesAutoresizingMaskIntoConstraints = false
         episodesLabel.translatesAutoresizingMaskIntoConstraints = false
     }
-        func setupConstrint() {
+        private func setupConstraint() {
         NSLayoutConstraint.activate([
             characterImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             characterImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

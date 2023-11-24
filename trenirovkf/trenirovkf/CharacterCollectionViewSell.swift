@@ -24,6 +24,7 @@ final class CharacterCollectionViewSell: UICollectionViewCell {
     private let locationPrevLabel = UILabel()
     
     func setup(model: Hero) {
+        setupConstraint()
         self.contentView.addSubview(locationPrevLabel)
         locationPrevLabel.text = "Last knonw location: "
         locationPrevLabel.textColor = .gray
@@ -62,7 +63,8 @@ final class CharacterCollectionViewSell: UICollectionViewCell {
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
-        
+    }
+        func setupConstraint() {
         NSLayoutConstraint.activate([
             
             characterImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -81,7 +83,6 @@ final class CharacterCollectionViewSell: UICollectionViewCell {
             locationPrevLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 7),
             locationLabel.topAnchor.constraint(equalTo: locationPrevLabel.bottomAnchor, constant: 3),
             locationLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: 7)
-
         ])
     }
 }
